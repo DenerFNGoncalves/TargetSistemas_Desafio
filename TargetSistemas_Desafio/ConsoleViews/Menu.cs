@@ -5,10 +5,11 @@ public class Menu
         while (true)
         {
             Console.Clear();
-            Console.WriteLine("\n\n === Desafios ===");
+            Console.WriteLine("\n === Desafios ===");
             Console.WriteLine("\nEscolha uma opção:");
             Console.WriteLine();
             Console.WriteLine("1 - Desafio 01");
+            Console.WriteLine("2 - Desafio 02");
             Console.WriteLine("0 - Sair");
             Console.WriteLine();
 
@@ -18,6 +19,10 @@ public class Menu
             {
                 case "1":
                     ComissoesView.Start();
+                    break;
+
+                case "2":
+                    EstoqueView.Start();
                     break;
 
                 case "0":

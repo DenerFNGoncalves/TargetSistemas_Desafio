@@ -12,7 +12,7 @@ public class ComissoesView
         try
         {
             Console.WriteLine("Lendo dados arquivo de vendas...");
-            var dadosVendas = JsonReader.Read<DadosDeVendas>("./Data/vendas.json");
+            var dadosVendas = JsonReader.Read<DadosDeVendas>("./Data/Desafio01/vendas.json");
 
             Console.WriteLine($"Idenfificado {dadosVendas.Vendas.Count} vendas realizadas... ");
 

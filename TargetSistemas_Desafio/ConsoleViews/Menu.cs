@@ -10,6 +10,7 @@ public class Menu
             Console.WriteLine();
             Console.WriteLine("1 - Desafio 01");
             Console.WriteLine("2 - Desafio 02");
+            Console.WriteLine("3 - Desafio 03");
             Console.WriteLine("0 - Sair");
             Console.WriteLine();
 
@@ -25,6 +26,10 @@ public class Menu
                     new EstoqueView().Start();
                     break;
 
+                case "3":
+                    new JurosView().Start();
+                    break;
+
                 case "0":
                     return;
 
@@ -34,7 +39,6 @@ public class Menu
             }
 
 
-            Console.WriteLine();
             Console.WriteLine("\n\nPressione ENTER para continuar...");
             Console.ReadLine();
         }

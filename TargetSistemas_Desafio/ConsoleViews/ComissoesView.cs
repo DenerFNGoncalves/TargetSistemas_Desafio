@@ -4,7 +4,7 @@ using TargetSistemas_Desafio.Desafio01;
 
 public class ComissoesView
 {
-    public static void Start()
+    public void Start()
     {
         var comissaoService = new ComissaoVendedorService();
 

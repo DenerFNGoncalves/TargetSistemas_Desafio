@@ -18,11 +18,11 @@ public class Menu
             switch (opcao)
             {
                 case "1":
-                    ComissoesView.Start();
+                    new ComissoesView().Start();
                     break;
 
                 case "2":
-                    EstoqueView.Start();
+                    new EstoqueView().Start();
                     break;
 
                 case "0":

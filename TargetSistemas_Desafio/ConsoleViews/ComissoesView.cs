@@ -4,6 +4,7 @@ using TargetSistemas_Desafio.Desafio01;
 
 public class ComissoesView
 {
+    private readonly string DEFAULT_PATH = "./Data/Desafio01/vendas.json";
     public void Start()
     {
         var comissaoService = new ComissaoVendedorService();
@@ -11,10 +12,17 @@ public class ComissoesView
         Console.WriteLine("=== Desafio 01 ===");
         try
         {
-            Console.WriteLine("Lendo dados arquivo de vendas...");
-            var dadosVendas = JsonReader.Read<DadosDeVendas>("./Data/Desafio01/vendas.json");
+            Console.Write($"Informe o arquivo inicial do estoque, ou ENTER para usar padrão ({DEFAULT_PATH}):");
+            var caminhoArquivo = Console.ReadLine()?.Trim() ?? DEFAULT_PATH;
+            if (String.IsNullOrEmpty(caminhoArquivo))
+            {
+                caminhoArquivo = DEFAULT_PATH;
+            }
 
-            Console.WriteLine($"Idenfificado {dadosVendas.Vendas.Count} vendas realizadas... ");
+            Console.WriteLine("Lendo dados arquivo de vendas...");
+            var dadosVendas = JsonReader.Read<DadosDeVendas>(caminhoArquivo);
+
+            Console.WriteLine($"Idenficado {dadosVendas.Vendas.Count} vendas realizadas... ");
 
             Console.WriteLine("Calculando comissões... ");
             var comissoes = comissaoService.getListaComissao(dadosVendas.Vendas);
@@ -29,7 +37,8 @@ public class ComissoesView
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Erro: {ex.Message}");
+            Console.WriteLine($"<< Erro: {ex.Message} >> ");
+            Console.WriteLine();
         }
     }
 }
